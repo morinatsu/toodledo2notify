@@ -1,3 +1,4 @@
 *.pyc
 /notify.png
 /toodledo2notify.cnf
+/toodledo2notify.sh
