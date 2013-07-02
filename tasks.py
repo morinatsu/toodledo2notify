@@ -136,10 +136,13 @@ class HotList(object):
         logging.debug(': '.join(['AccountInfo', str(account_info)]))
 
         # Get Task list from Toodledo
-        task_list = api.getTasks(fields="duedate,star,priority")
+        task_list = api.getTasks(fields="duedate,star,priority,parent")
         logging.info(': '.join(['Got task list', str(len(task_list))]))
 
         for task in self._HotlistFilter(account_info, task_list):
+            if task.parent != 0:
+                parent = api.getTask(task.parent)
+                task.title = parent.title  + '.' + task.title
             yield task
 
 
