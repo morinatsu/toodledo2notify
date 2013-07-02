@@ -18,8 +18,9 @@ Getting Start
   file path of icon what you want to use. 
 3. run the script.
   `python main.py`
-  (I register it for windows task system.)
+  (I register this to gnome-session-properties.)
 
 dependency
 ----------
 + poodledo
++ pynotify
